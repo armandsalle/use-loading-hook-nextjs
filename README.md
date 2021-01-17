@@ -1,34 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# useLoading hook
 
-## Getting Started
+Hello! If you want a simple way to create a loading screen with React, you can grad the code and change it with your need. Out of the box, the hook will check the load of your fonts and all images, but you can add more promises to resolve.
 
-First, run the development server:
+## How to use?
 
-```bash
-npm run dev
-# or
-yarn dev
+First copy the hook from `hooks/useLoading.js`. In this file, you can tweak values, add more promises, change the minimum duration of the loading timer, the duration of the exit animation etc.
+
+Then, create a `_document.js` in your `pages` folder and add this script before the closing body tag:
+
+```
+<script dangerouslySetInnerHTML={{ __html: 'window.loadContentPromise = new Promise((resolve)=>{window.addEventListener("DOMContentLoaded", resolve);});'}} ></script>
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can use the hook where you want in your app, but loading screen are often on the top your components tree.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+The hook give you two values:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+- `loadedCanGo` (default to `false`) => is set to `true` when all promises resolves
+- `animationsCanRun` (default to `false`) => is set to `true` when all promises resolves, but with a delay of your remove loading screen aniamtion duration.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Warning
 
-## Learn More
+This code is not a library because I don't have the time to maintain the code and catch all the differents ways it can be use. Feel free to clone it, fork it, use it, make pull requests etc...
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Have fun!
