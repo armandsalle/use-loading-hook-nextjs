@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }) {
       gsap.to(".loading-screen", {
         scaleX: 0,
         transformOrigin: "left",
-        duration: 0.3,
+        duration: 0.5,
         pointerEvents: "none",
         userSelect: "none",
       });

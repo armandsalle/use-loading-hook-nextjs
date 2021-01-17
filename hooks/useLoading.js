@@ -12,7 +12,7 @@ function useLoadingImpl() {
   );
 
   const MININUM_DURATION = 1000;
-  const EXIT_DURATION = 300;
+  const EXIT_DURATION = 500;
 
   useEffect(() => {
     const startTime = performance.now();
