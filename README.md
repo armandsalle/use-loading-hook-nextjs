@@ -2,7 +2,7 @@
 
 Hello! If you want a simple way to create a loading screen with React, you can grad the code and change it with your need. Out of the box, the hook will check the load of your fonts and all images, but you can add more promises to resolve.
 
-Demo: [it's live here!](https://use-loading-hook.vercel.app/)
+Demo: [it's live here!](https://use-loading-hook-nextjs.vercel.app/)
 
 ## How to use?
 
